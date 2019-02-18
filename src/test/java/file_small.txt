@@ -1,0 +1,188 @@
+
+
+
+
+
+GO!
+Ethan Zeigler
+Search
+Plan
+Enroll
+Advising Tools
+ 	Shopping Cart	 	 	|	 	 	Course History
+Shopping Cart
+Add Classes to Shopping Cart
+
+Use the Shopping Cart to temporarily save classes until it is time to enroll for this term.  Select Validate to have the system check for possible conflicts prior to enrolling.
+
+
+
+2019 Spring | Undergraduate | The College of New Jersey
+
+
+Descr
+
+
+Open
+Closed
+Open
+Closed
+
+
+Add to Cart
+Enter Class Nbr
+
+enter
+
+Find Classes
+
+Class Search
+
+My Requirements
+
+
+search
+
+2019 Spring Shopping Cart
+Select	Class	Days/Times	Room	Instructor	Units	Available Seats	Status
+
+CHE 202-A02
+(41559)
+Th 9:30AM - 12:20PM
+Chemistry Building C114
+B. Podlogar
+1.00
+8
+ Open
+
+CHE 202-A
+(41540)
+MoTh 8:00AM - 9:20AM
+Chemistry Building C121
+B. Podlogar
+
+16
+ Open
+
+CLS 250-02
+(40782)
+MoTh 3:30PM - 4:50PM
+Bliss Hall Annex 234
+C. Pilney
+1.00
+0
+ Closed
+
+CSC 299-02
+(41598)
+Mo 2:00PM - 3:20PM
+Mo 2:00PM - 3:20PM
+Forcina Hall 409
+STEM Building 102
+D. Knox
+0.25
+2
+ Open
+
+CSC 415-01
+(41584)
+MoTh 9:30AM - 10:50AM
+Mo 11:00AM - 12:20PM
+STEM Building 112
+STEM Building 112
+S. Devlin,
+S. Pulimood
+1.00
+0
+ Closed
+
+PHY 171-A01
+(41717)
+Tu 1:30PM - 3:20PM
+Physics & Mathematics P122
+N. Magee
+1.00
+0
+ Closed
+
+PHY 171-A
+(41716)
+TuFr 11:00AM - 12:20PM
+Physics & Mathematics P117
+N. Magee
+
+0
+ Closed
+
+WGS 220-01
+(40993)
+TuFr 9:30AM - 10:50AM
+Social Sciences Building 325
+J. Kurtz
+1.00
+0
+ Closed
+
+
+delete
+
+validate
+
+enroll
+for selected
+
+Collapse section My 2019 Spring Class Schedule My 2019 Spring Class Schedule
+
+Descr
+
+
+Enrolled
+Dropped
+Enrolled
+Dropped
+Class	Description	Days/Times	Room	Instructor	Units	Status
+CLS 250-01
+(40781)
+INTRODUCTION TO GREEK MYTHOLOG (DisLec)
+MoTh 2:00PM - 3:20PM
+Bliss Hall Annex 234
+C. Pilney
+1.00
+ Enrolled
+CSC 299-01
+(41596)
+JUNIOR SEM IN COMPUTER SCIENCE (Seminar)
+Mo 11:00AM - 12:20PM
+Forcina Hall 409
+D. Knox
+0.25
+ Enrolled
+CSC 315-01
+(41609)
+DATABASE SYSTEMS (DisLec)
+TuFr 2:00PM - 3:20PM
+Forcina Hall 424
+R. Butler
+1.00
+ Enrolled
+CSC 415-02
+(42053)
+SOFTWARE ENGINEERING (DisLec)
+MoTh 12:30PM - 1:50PM
+Th 11:00AM - 12:20PM
+STEM Building 112
+STEM Building 112
+S. Devlin,
+S. Pulimood
+1.00
+ Enrolled
+WGS 220-02
+(40994)
+GENDER AND POPULAR CULTURE (DisLec)
+Mo 5:30PM - 8:20PM
+Bliss Hall Annex 234
+M. Dalpe
+1.00
+ Enrolled
+
+ Go to top iconGo to top

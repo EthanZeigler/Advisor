@@ -1,0 +1,177 @@
+courses:
+  Statistics:
+    class_code: 215
+    sections:
+      '04':
+        professor: Navard
+        room: P222
+        times:
+        - day: thursday
+          start:
+            hour: 10
+            min: 10
+          end:
+            hour: 11
+            min: 00
+        - day: monday
+          start:
+            hour: 10
+            min: 10
+          end:
+            hour: 11
+            min: 00
+    dependencies:
+    - dependency
+  Algs:
+    class_code: 335
+    sections:
+      '01':
+        professor: Papamichael
+        room: Forcina 410
+        times:
+        - day: friday
+          start:
+            hour: 9
+            min: 30
+          end:
+            hour: 11
+            min: 00
+        - day: tuesday
+          start:
+            hour: 10
+            min: 10
+          end:
+            hour: 11
+            min: 00
+    dependencies:
+    - dependency
+    - another
+  BeepBeepImaSheep!:
+      class_code: 38463
+      sections:
+        '08':
+          professor: Navard
+          room: P222
+          times:
+          - day: Friday
+            start:
+              hour: 10
+              min: 10
+            end:
+              hour: 11
+              min: 00
+          - day: monday
+            start:
+              hour: 10
+              min: 10
+            end:
+              hour: 41
+              min: 00
+      dependencies:
+      - dependency
+  catsaregods:
+      class_code: 3939
+      sections:
+        '233':
+          professor: Mr.Purple
+          room: PbSi909092
+          times:
+          - day: thursday
+            start:
+              hour: 10
+              min: 10
+            end:
+              hour: 11
+              min: 00
+          - day: monday
+            start:
+              hour: 10
+              min: 10
+            end:
+              hour: 11
+              min: 00
+      dependencies:
+      - dependency
+  notheyarent:
+        class_code: 93hs3
+        sections:
+          '233':
+            professor: Mr.Purple
+            room: PbSi909092
+            times:
+            - day: thursday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+            - day: monday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+        dependencies:
+        - bacon
+  kden:
+        class_code: 3pGh
+        sections:
+          '233':
+            professor: ggug-yr
+            room: Pi02
+            times:
+            - day: tuesday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+            - day: monday
+              start:
+                hour: 10
+                min: 11
+              end:
+                hour: 11
+                min: 00
+        dependencies:
+        - dependency
+  cabhsaregods:
+        class_code: 3939
+        sections:
+          '233':
+            professor: hfgx
+            room: Pb9092
+            times:
+            - day: thursday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+            - day: monday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+            - day: tuesday
+              start:
+                hour: 00
+                min: 00
+              end:
+                hour: 01
+                min: 01
+            - day: monday
+              start:
+                hour: 10
+                min: 10
+              end:
+                hour: 11
+                min: 00
+        dependencies:
+        - dependency
