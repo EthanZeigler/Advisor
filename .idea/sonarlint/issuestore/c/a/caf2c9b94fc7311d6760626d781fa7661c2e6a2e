@@ -1,34 +1,0 @@
-
-`squid:S1192"FDefine a constant instead of duplicating this literal "start" 5 times.(×ë¾Çúÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(“üÔ¹üÿÿÿÿ
-bsquid:UselessImportCheck"@Remove this unused import 'javax.xml.stream.events.EndDocument'.(ÒøÚø
-Qsquid:S1854"<Remove this useless assignment to local variable "schedule".(â ³½
-1squid:S1220""Move this file to a named package.
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(»€—ƒûÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ı®‚·ûÿÿÿÿ
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(°–Íğ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(³›ÙÄıÿÿÿÿ
-L
-squid:S106"9Replace this use of System.out or System.err by a logger.(êÒÁ_
-gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ã¸Ù
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÕıÚúÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(¬Èœßüÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(œ¨‘«úÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(è½âÖÿÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(è½âÖÿÿÿÿÿ
-Bsquid:S1481"-Remove this unused "schedule" local variable.(â ³½
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(°–Íğ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÎÕëœüÿÿÿÿ
-`squid:S1192"KDefine a constant instead of duplicating this literal "class_code" 3 times.(©õä’
