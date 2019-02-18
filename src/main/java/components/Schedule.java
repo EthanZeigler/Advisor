@@ -5,6 +5,8 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -106,7 +108,8 @@ public class Schedule implements Cloneable {
                     .append("\n"));
         });
         AsciiTable table = new AsciiTable();
-        table.addLightRule();
+        table.addRule();
+
 
         @SuppressWarnings("unchecked")
         ImmutablePair<String, DayOfWeek>[] days = new ImmutablePair[]{
@@ -118,15 +121,19 @@ public class Schedule implements Cloneable {
                 new ImmutablePair<>("Saturday", DayOfWeek.SATURDAY),
                 new ImmutablePair<>("Sunday", DayOfWeek.SUNDAY)};
         table.addRow("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
-        List<String> tableContent = new ArrayList<>(7);
-        for (ImmutablePair day : days) {
-
+       String[] tableContent = new String[7];
+        Arrays.fill(tableContent, "");
+        for (Event event: events) {
+            tableContent[event.getDayOfWeek().getValue() - 1] =
+                    (tableContent[event.getDayOfWeek().getValue() - 1] + "\n" + event.prettyPrint());
         }
-        table.addHeavyRule();
+        table.addRule();
+        table.addRow(Arrays.asList(tableContent));
+        table.addRule();
 
-        List<String> days = new ArrayList<>();
-
-
+        builder.append(table.render()).append("\n\n");
+        //builder.append(table.render());
+        return builder.toString();
     }
 
     /**

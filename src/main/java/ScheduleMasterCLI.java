@@ -53,8 +53,8 @@ public class ScheduleMasterCLI {
         } else {
             courses = new ArrayList<>(PawsParser.parseData(null));
         }
-        int kPower = cli.readInt("Enter the number of courses you are taking", 1, 10);
-
+        //int kPower = cli.readInt("Enter the number of courses you are taking", 1, 10);
+        int kPower = 4;
         Set<Schedule> schedules = ScheduleGenerator.generateSchedules(courses, kPower);
 
         StringBuilder builder = new StringBuilder("Here are your possible schedules:\n\n");
@@ -65,9 +65,7 @@ public class ScheduleMasterCLI {
         AtomicInteger counter = new AtomicInteger(1);
         iterator.forEachRemaining(schedule -> {
             builder.append("Schedule ").append(counter).append(":").append("\n");
-            builder.append("\tCourses = ").append(schedule.collectCourses()).append("\n");
-            builder.append("\tSections = ").append(schedule.collectSections()).append("\n");
-            builder.append("\tEvents = ").append(schedule.getEvents()).append("\n");
+            builder.append(schedule.prettyPrint());
             counter.getAndIncrement();
         });
         return builder.toString();

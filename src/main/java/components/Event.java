@@ -188,11 +188,12 @@ public class Event implements Comparable {
     }
 
     @Override
-    public int compareTo(Event e) {
-        if (dayOfWeek.getValue() != e.getDayOfWeek().getValue()) {
-            return dayOfWeek.getValue() - e.getDayOfWeek().getValue();
+    public int compareTo(Object e) {
+    if (!(e instanceof Event)) throw new ClassCastException("Invalid comparison");
+        if (dayOfWeek.getValue() != ((Event) e).getDayOfWeek().getValue()) {
+            return (dayOfWeek.getValue() - ((Event) e).getDayOfWeek().getValue()) * 10000;
         } else {
-            return getDayOfWeek()
+            return (startHour - ((Event) e).startHour) * 60 + (startMinute - ((Event) e).startMinute);
         }
     }
 }

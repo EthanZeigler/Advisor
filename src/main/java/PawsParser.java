@@ -5,6 +5,7 @@ import org.apache.commons.collections.MapUtils;
 
 import java.io.*;
 import java.util.*;
+import java.time.DayOfWeek;
 
 /**
  * Created by Ethan on 11/20/17.
@@ -194,11 +195,11 @@ public class PawsParser {
                 for (int j = 0; j < timeTokens[0].length() / 2; j++) {
                     Event event = new Event();
                     switch (timeTokens[0].substring(j * 2, j * 2 + 2).toUpperCase()) {
-                        case "MO": event.setDayOfWeek(Event.DayOfWeek.MONDAY);break;
-                        case "TU": event.setDayOfWeek(Event.DayOfWeek.TUESDAY);break;
-                        case "WE": event.setDayOfWeek(Event.DayOfWeek.WEDNESDAY);break;
-                        case "TH": event.setDayOfWeek(Event.DayOfWeek.THURSDAY);break;
-                        case "FR": event.setDayOfWeek(Event.DayOfWeek.FRIDAY);break;
+                        case "MO": event.setDayOfWeek(DayOfWeek.MONDAY);break;
+                        case "TU": event.setDayOfWeek(DayOfWeek.TUESDAY);break;
+                        case "WE": event.setDayOfWeek(DayOfWeek.WEDNESDAY);break;
+                        case "TH": event.setDayOfWeek(DayOfWeek.THURSDAY);break;
+                        case "FR": event.setDayOfWeek(DayOfWeek.FRIDAY);break;
                     }
                     // set event fields
 
@@ -224,7 +225,7 @@ public class PawsParser {
         }
 
 
-        MapUtils.debugPrint(System.out, "myMap", courseMap);
+//        MapUtils.debugPrint(System.out, "myMap", courseMap);
         return courseMap.values();
 
 

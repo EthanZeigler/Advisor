@@ -6,6 +6,7 @@ import components.Section;
 import javax.xml.stream.events.EndDocument;
 import java.util.List;
 import java.util.Map;
+import java.time.DayOfWeek;
 
 /**
  * Created by Ethan on 10/4/17.
@@ -123,7 +124,7 @@ public class YAMLSerialization {
 
             // all data should be okay now
 
-            Event.DayOfWeek day = Event.DayOfWeek.valueOf(((String)entry.get("day")).toUpperCase());
+            DayOfWeek day = DayOfWeek.valueOf(((String)entry.get("day")).toUpperCase());
             int startHour = (int) ((Map<String, Object>) entry.get("start")).get("hour");
             int startMin = (int) ((Map<String, Object>) entry.get("start")).get("min");
             int endHour = (int) ((Map<String, Object>) entry.get("end")).get("hour");

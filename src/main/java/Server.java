@@ -2,9 +2,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 
 public class Server {
@@ -18,16 +16,30 @@ public class Server {
     static class MyHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange t) throws IOException {
-            String response = "This is the response";
             InputStream responseBody = t.getRequestBody();
             String input = new String(responseBody.readAllBytes());
 
             String output = ScheduleMasterCLI.main(new String[]{input});
+            System.out.println(output.length());
 
             t.sendResponseHeaders(200, output.length());
-            OutputStream os = t.getResponseBody();
-            os.write(output.getBytes());
-            os.close();
+            try (BufferedOutputStream out = new BufferedOutputStream(t.getResponseBody())) {
+                try (ByteArrayInputStream bis = new ByteArrayInputStream(output.getBytes())) {
+                    byte [] buffer = new byte [1024];
+                    int count;
+                    while ((count = bis.read(buffer)) != -1) {
+                        out.write(buffer, 0, count);
+                    }
+                }
+            }
+
+
+//            OutputStream os = t.getResponseBody();
+//            try {
+//                os.write(output.getBytes());
+//            } catch(Exception e) {
+//                e.printStackTrace();
+//            }
         }
     }
 }
