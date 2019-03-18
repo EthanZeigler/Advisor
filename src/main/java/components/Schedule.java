@@ -1,13 +1,11 @@
 package components;
 
 import de.vandermeer.asciitable.AsciiTable;
+import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.time.DayOfWeek;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -16,13 +14,13 @@ import java.util.stream.Collectors;
 public class Schedule implements Cloneable {
 
     static int counter = 0;
-    private List<Event> events;
+    private Set<Event> events;
 
     /**
      * Represents a section's schedule
      * @param events section's events
      */
-    public Schedule(List<Event> events) {
+    public Schedule(Set<Event> events) {
         this.events = events;
     }
 
@@ -30,14 +28,14 @@ public class Schedule implements Cloneable {
      * Represents a schedule
      */
     public Schedule() {
-        this (new ArrayList<>());
+        this (new HashSet<>());
     }
 
     /**
      * Returns the events in the schedule
      * @return the events in the schedule
      */
-    public List<Event> getEvents() {
+    public Set<Event> getEvents() {
         return events;
     }
 
@@ -67,7 +65,7 @@ public class Schedule implements Cloneable {
     }
 
     public boolean merge(Schedule schedule) {
-        List<Event> savedEvents = new ArrayList<>(events);
+        Set<Event> savedEvents = new HashSet<>(events);
         for (Event event : schedule.getEvents()) {
             if (!addEvent(event)) {
                 events = savedEvents;
@@ -77,12 +75,12 @@ public class Schedule implements Cloneable {
         return true;
     }
 
-    public List<Course> collectCourses() {
-        return collectSections().stream().map(Section::getParentCourse).distinct().collect(Collectors.toList());
+    public Set<Course> collectCourses() {
+        return collectSections().stream().map(Section::getParentCourse).distinct().collect(Collectors.toSet());
     }
 
-    public List<Section> collectSections() {
-        return events.stream().map(Event::getParentSection).distinct().collect(Collectors.toList());
+    public Set<Section> collectSections() {
+        return events.stream().map(Event::getParentSection).collect(Collectors.toSet());
     }
 
     public String prettyPrint() {
@@ -94,20 +92,21 @@ public class Schedule implements Cloneable {
         //
         //
         //
-        builder.append("Courses:");
+        builder.append("Courses:\n");
         collectCourses().forEach(course -> {
             builder.append("\t")
                     .append(course.getName())
                     .append(" ->\n");
             course.getSections().forEach(section -> builder.append("\t\t")
-                    .append(section.getSectionCode())
-                    .append(":")
-                    .append(section.getProfName())
-                    .append(" ")
+                    .append(section.getSectionCode().trim())
                     .append(section.getDependencyPrettyPrint())
+                    .append(":")
+                    .append(section.getProfName().trim())
+                    .append(" ")
                     .append("\n"));
         });
         AsciiTable table = new AsciiTable();
+        table.setTextAlignment(TextAlignment.CENTER);
         table.addRule();
 
 
@@ -117,21 +116,21 @@ public class Schedule implements Cloneable {
                 new ImmutablePair<>("Tuesday", DayOfWeek.TUESDAY),
                 new ImmutablePair<>("Wednesday", DayOfWeek.WEDNESDAY),
                 new ImmutablePair<>("Thursday", DayOfWeek.THURSDAY),
-                new ImmutablePair<>("Friday", DayOfWeek.FRIDAY),
-                new ImmutablePair<>("Saturday", DayOfWeek.SATURDAY),
-                new ImmutablePair<>("Sunday", DayOfWeek.SUNDAY)};
-        table.addRow("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
-       String[] tableContent = new String[7];
+                new ImmutablePair<>("Friday", DayOfWeek.FRIDAY)};
+//                new ImmutablePair<>("Saturday", DayOfWeek.SATURDAY),
+//                new ImmutablePair<>("Sunday", DayOfWeek.SUNDAY)};
+        table.addRow("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+        String[] tableContent = new String[5];
         Arrays.fill(tableContent, "");
         for (Event event: events) {
             tableContent[event.getDayOfWeek().getValue() - 1] =
-                    (tableContent[event.getDayOfWeek().getValue() - 1] + "\n" + event.prettyPrint());
+                    (tableContent[event.getDayOfWeek().getValue() - 1] + event.prettyPrint().replace("\n", "[BR]") + "<br><br><=====>");
         }
         table.addRule();
         table.addRow(Arrays.asList(tableContent));
         table.addRule();
 
-        builder.append(table.render()).append("\n\n");
+        builder.append(table.render(120)).append("\n\n");
         //builder.append(table.render());
         return builder.toString();
     }
@@ -200,7 +199,7 @@ public class Schedule implements Cloneable {
     protected Schedule clone() throws CloneNotSupportedException {
         Schedule schedule = (Schedule) super.clone();
 
-        schedule.events = new ArrayList<>(schedule.events);
+        schedule.events = new HashSet<>(schedule.events);
         return schedule;
     }
 }

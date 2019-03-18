@@ -169,16 +169,19 @@ public class Event implements Comparable {
     }
 
     private static void writePrettyTime(StringBuilder builder, int hour, int min) {
+
         if (hour == 0) {
             builder.append("12:");
+        } else if (hour > 12){
+            builder.append(hour - 12).append(":");
         } else {
             builder.append(hour).append(":");
         }
 
-        if (min + 1 < 10) {
+        if (min < 10) {
             builder.append(0);
         }
-        builder.append(min + 1);
+        builder.append(min);
 
         if (hour < 12) {
             builder.append("AM");

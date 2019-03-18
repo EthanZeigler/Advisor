@@ -178,7 +178,7 @@ public class PawsParser {
                 String[] tokenizedTimeToken = timeTokens[1].split(":");
                 startHour = Integer.parseInt(tokenizedTimeToken[0]);
                 startMinute = Integer.parseInt(tokenizedTimeToken[1].substring(0, 2));
-                if (tokenizedTimeToken[1].substring(2).equalsIgnoreCase("PM")) {
+                if (tokenizedTimeToken[1].substring(2).equalsIgnoreCase("PM") && startHour != 12) {
                     startHour += 12;
                 }
 
@@ -187,8 +187,8 @@ public class PawsParser {
 
                 endHour = Integer.parseInt(tokenizedTimeToken[0]);
                 endMinute = Integer.parseInt(tokenizedTimeToken[1].substring(0, 2));
-                if (tokenizedTimeToken[1].substring(2).equalsIgnoreCase("PM")) {
-                    startHour += 12;
+                if (tokenizedTimeToken[1].substring(2).equalsIgnoreCase("PM") && endHour != 12) {
+                    endHour += 12;
                 }
 
                 // break apart multiple days
@@ -223,6 +223,7 @@ public class PawsParser {
             lastUsedCourse = course;
             lastUsedSection = section;
         }
+        System.out.println("Parse Complete");
 
 
 //        MapUtils.debugPrint(System.out, "myMap", courseMap);

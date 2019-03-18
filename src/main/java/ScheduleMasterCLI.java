@@ -56,6 +56,7 @@ public class ScheduleMasterCLI {
         //int kPower = cli.readInt("Enter the number of courses you are taking", 1, 10);
         int kPower = 4;
         Set<Schedule> schedules = ScheduleGenerator.generateSchedules(courses, kPower);
+        System.out.println("Building output");
 
         StringBuilder builder = new StringBuilder("Here are your possible schedules:\n\n");
         //System.out.println("Here are your possible schedules:\n\n");

@@ -53,6 +53,7 @@ public class ScheduleGenerator {
     private static Schedule processSectionPossibility(Set<Section> sections) {
         Schedule returnSchedule = new Schedule();
         Iterator<Section> iter = sections.iterator();
+        if (sections.isEmpty()) return null;
         boolean hasFailed = false;
         do {
             hasFailed = !returnSchedule.merge(iter.next().getSchedule());

@@ -44,7 +44,14 @@ public class Section {
 
     public String getDependencyPrettyPrint() {
         StringBuilder builder = new StringBuilder();
-        dependencies.forEach(section -> builder.append(", ").append(section.getSectionCode()));
+        if (!dependencies.isEmpty()) {
+            builder.append("(depends on section(s) ");
+        }
+        dependencies.forEach(section -> builder.append(section.getSectionCode()).append(", "));
+        if (builder.length() > 2) {
+            builder.delete(builder.length() - 2, builder.length());
+            builder.append(")");
+        }
         return builder.toString();
     }
 
