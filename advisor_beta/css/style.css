@@ -1,0 +1,9 @@
+.text-content {
+    max-width: 600px;
+}
+
+.response {
+    display: none;
+    font-family: monospace;
+    white-space: pre;
+}

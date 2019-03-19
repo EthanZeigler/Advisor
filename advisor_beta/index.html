@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EZ Web Applications</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/paws.js"></script>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-lg-4">
+    <a class="navbar-brand" href="#">Ethan Zeigler's Web Apps</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">All Apps <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About me </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="mx-5">
+    <div class="text-content text-justify">
+        <h1>PAWS Schedule Generator</h1>
+	<h3><b><i><u>THIS APPLICATION IS IN BETA. EXPECT WEIRD STUFF. I wanted to make sure it was out for registration</u></i></b></h3><br>
+        PAWS is missing tons of things that should be standard in a course management, but by far
+        the worst is trying to figure out how to organize classes so they don't conflict. PAWS will
+        only tell you if an arrangement is okay or not, but what it really needs is to tell you what
+        arrangements are <i>possible</i>. Advisor takes your PAWS shopping cart and tell you what classes
+        will go together.<br>
+        <br>
+
+        <h3>How to use</h3>
+            Windows: press <b>CONTROL+A</b> (highlighting the entire page) then <b>CONTROL+C</b> (to copy it).
+            Right click on the text box below and choose <b>paste</b> <br>
+        <br>
+        macOS: press <b>⌘+A</b> (highlighting the entire page) then <b>⌘+C</b> (to copy it). Paste into the text box below.
+    </div>
+    <div class="form-group">
+        <label for="paste_field"></label>
+        <textarea class="form-control" rows="5" id="paste_field"></textarea>
+    </div>
+    <div>
+        <button type="button" class="btn btn-success" onclick="queryserver()">Submit</button>
+        <div id="server_status"></div>
+    </div>
+    <div class="response" id="response-card">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">Result</h5>
+                <p class="card-text" id="card-content">You shouldn't be able to see this...</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

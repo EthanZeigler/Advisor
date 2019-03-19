@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "types": ["jquery"],
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "js/paws.ts"
+  ]
+}
